@@ -12,9 +12,6 @@ import java.io.Serializable;
  */
 public class Date implements Serializable {
 
-	/**
-	 * serialVersionUID used to 
-	 */
 	private static final long serialVersionUID = 1L;
 	
 	// ATTRIBUTES

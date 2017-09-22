@@ -58,9 +58,6 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(propOrder={"lastName", "firstName"})
 public class Person implements Serializable {
 
-	/**
-	 * serialVersionUID used to 
-	 */
 	private static final long serialVersionUID = 1L;
 	
 	// ATTRIBUTES

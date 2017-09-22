@@ -5,8 +5,11 @@ package CM1;
 
 import java.io.Serializable;
 
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * @author JUNGES Pierre-Marie - M2 SSSR 2017/2018
@@ -32,8 +35,27 @@ import javax.xml.bind.annotation.XmlTransient;
  * 		be visible in the xml file.
  * 		-Above a getter's attribute(PRIVATE one) we want to hide
  * 
+ * @XmlType(propOrder = {"lastName", "firstName"})
+ * 		-The attribute's order in the XML file will be:
+ * 			<lastName> ...
+ * 			<firstName> ...
+ * 
+ * @XmlAttribute 
+ * Put a class' attribute as xml attribute instead of xml element
+ * If the class attribute is private:
+ * 		-Put @XmlAttribute above getter method
+ * If public:
+ * 		-Put @XmlAttribute above attribute declaration
+ * 
+ * @XmlElement(name=XX)
+ * Change attribute's name inside xml fil
+ * If the class attribute is private:
+ * 		-Put @XmlElement(name=XX) above getter method
+ * If public:
+ * 		-Put @XmlElement(name=XX) above attribute declaration
  */
 @XmlRootElement(name="Person")
+@XmlType(propOrder={"lastName", "firstName"})
 public class Person implements Serializable {
 
 	/**
@@ -42,8 +64,9 @@ public class Person implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	// ATTRIBUTES
-	private String lastName;
 	private String firstName;
+	private String lastName;
+	private int age;
 	private Date birthDate;
 	
 	/**
@@ -53,6 +76,7 @@ public class Person implements Serializable {
 		lastName = "";
 		firstName = "";
 		birthDate = new Date();
+		age = 0;
 	}
 	
 	/**
@@ -61,16 +85,19 @@ public class Person implements Serializable {
 	 * @param f - the firstname
 	 * @param l - the lastname
 	 * @param d - the date of birth
+	 * @param a - the age
 	 */
-	public Person(String f, String l, Date d) {
+	public Person(String f, String l, Date d, int a) {
 		lastName = l;
 		firstName = f;
 		birthDate = d;
+		age = a;
 	}
 
 	/**
 	 * @return the lastName
 	 */
+	@XmlElement(name="nom")
 	public String getLastName() {
 		return lastName;
 	}
@@ -85,6 +112,7 @@ public class Person implements Serializable {
 	/**
 	 * @return the firstName
 	 */
+	@XmlElement(name="prenom")
 	public String getFirstName() {
 		return firstName;
 	}
@@ -109,6 +137,21 @@ public class Person implements Serializable {
 	 */
 	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
+	}
+
+	/**
+	 * @return the age
+	 */
+	@XmlAttribute
+	public int getAge() {
+		return age;
+	}
+
+	/**
+	 * @param age the age to set
+	 */
+	public void setAge(int age) {
+		this.age = age;
 	}
 	
 	/**

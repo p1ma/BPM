@@ -5,9 +5,10 @@
 
   <xs:complexType name="person">
     <xs:sequence>
-      <xs:element name="firstName" type="xs:string" minOccurs="0"/>
-      <xs:element name="lastName" type="xs:string" minOccurs="0"/>
+      <xs:element name="nom" type="xs:string" minOccurs="0"/>
+      <xs:element name="prenom" type="xs:string" minOccurs="0"/>
     </xs:sequence>
+    <xs:attribute name="age" type="xs:int" use="required"/>
   </xs:complexType>
 </xs:schema>
 

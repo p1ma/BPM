@@ -42,7 +42,10 @@ public class Main {
 		 * has a nullary constructor,
 		 * allows access to properties using getter and setter methods.
 		*/
-		Person p1 = new Person("Bob", "Dylan", new Date(25,05,1941));
+		Person p1 = new Person("Bob", 
+				"Dylan", 
+				new Date(25,05,1941), 
+				77);
 
 		/*
 		 * Serialization: Object -> XML

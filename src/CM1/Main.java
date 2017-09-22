@@ -4,11 +4,15 @@
 package CM1;
 
 import java.io.File;
+import java.io.IOException;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
+import javax.xml.bind.SchemaOutputResolver;
 import javax.xml.bind.Unmarshaller;
+import javax.xml.transform.Result;
+import javax.xml.transform.stream.StreamResult;
 
 /**
  * @author JUNGES Pierre-Marie - M2 SSSR 2017/2018
@@ -21,6 +25,12 @@ public class Main {
 	 * File where to_XML() is supposed to stock the Java Object
 	 */
 	private static File xmlFile = new File("person.xml");
+	
+	/**
+	 * File where the XSD Schema is located
+	 */
+	private static File xsdFile = new File("person.xsd");
+	
 	/**
 	 * Launch the CM1 Application
 	 * @param args
@@ -45,11 +55,26 @@ public class Main {
 		Person p2 = XML_to_object();
 		
 		/*
-		 * Check if p1 = p2
+		 * Check if p1 == p2
 		 */
 		if (p1.equals(p2)) {
 			System.out.println("Serialization and Deserialization done right !");
 		}
+		
+		/*
+		 * Generate XSD Schema from Person.class
+		 */
+		generate_XSD();
+		
+		/*
+		 * (xjc in /usr/lib/jvm/java-8-openjdk-amd64/bin/)
+		 * Create java classes from xsd schema:
+		 * 		xjc [options] <schema.xsd>
+		 * 
+		 * options:
+		 *	-d <rep> generate classes inside rep/
+		 *	-p <pack> classes's package will be pack
+		 */
 	}
 	
 	/*
@@ -105,5 +130,28 @@ public class Main {
 		}
 		return null;
 	}
+	
+	/*
+	 * Create a XSD Schema
+	 */
+	public static void generate_XSD() {
+		try {
+			// Obtain a new instance of a JAXBContext
+			JAXBContext jaxbContext = JAXBContext.newInstance(Person.class);
+			
+			// In order to create a schema
+			jaxbContext.generateSchema(new SchemaOutputResolver() {
 
+				@Override
+				public Result createOutput(String arg0, String arg1) throws IOException {
+					return new StreamResult(xsdFile);
+				}
+				
+			});
+			System.out.println("XSD Schema generated !");
+		} catch (JAXBException | IOException e) {
+			System.err.println("Error: generate XSD Schema");
+			System.exit(1);
+		}
+	}
 }

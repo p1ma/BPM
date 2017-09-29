@@ -1,7 +1,7 @@
 /**
  * 
  */
-package CM1;
+package cm.s1.serial;
 
 import java.io.File;
 import java.io.IOException;
@@ -24,12 +24,12 @@ public class Main {
 	/**
 	 * File where to_XML() is supposed to stock the Java Object
 	 */
-	private static File xmlFile = new File("person.xml");
+	private static File xmlFile = new File("files/person.xml");
 	
 	/**
 	 * File where the XSD Schema is located
 	 */
-	private static File xsdFile = new File("person.xsd");
+	private static File xsdFile = new File("files/person.xsd");
 	
 	/**
 	 * Launch the CM1 Application

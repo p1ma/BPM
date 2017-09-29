@@ -1,7 +1,7 @@
 /**
  * 
  */
-package CM1;
+package cm.s1.serial;
 
 import java.io.Serializable;
 

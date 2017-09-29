@@ -1,0 +1,1 @@
+{"persons":[{"firstName":"Pierre-Marie","lastName":"JUNGES","age":23,"birthDate":{"day":1,"month":23,"year":4567}},{"firstName":"A","lastName":"B","age":12,"birthDate":{"day":0,"month":1,"year":2}},{"firstName":"C","lastName":"D","age":345,"birthDate":{"day":3,"month":4,"year":5}},{"firstName":"E","lastName":"F","age":678,"birthDate":{"day":6,"month":7,"year":8}}]}

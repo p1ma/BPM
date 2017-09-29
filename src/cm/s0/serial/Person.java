@@ -54,7 +54,7 @@ import javax.xml.bind.annotation.XmlType;
  * If public:
  * 		-Put @XmlElement(name=XX) above attribute declaration
  */
-@XmlRootElement(name="Person")
+@XmlRootElement(name="personne")
 @XmlType(propOrder={"lastName", "firstName"})
 public class Person implements Serializable {
 

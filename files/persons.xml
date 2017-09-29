@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Personnes>
+    <Personne age="23">
+        <nom>JUNGES</nom>
+        <prenom>Pierre-Marie</prenom>
+    </Personne>
+    <Personne age="12">
+        <nom>B</nom>
+        <prenom>A</prenom>
+    </Personne>
+    <Personne age="345">
+        <nom>D</nom>
+        <prenom>C</prenom>
+    </Personne>
+    <Personne age="678">
+        <nom>F</nom>
+        <prenom>E</prenom>
+    </Personne>
+</Personnes>

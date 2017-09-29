@@ -1,7 +1,7 @@
 /**
  * 
  */
-package cm.s1.rmi;
+package cm.s0.rmi;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;

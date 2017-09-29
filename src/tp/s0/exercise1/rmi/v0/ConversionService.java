@@ -11,7 +11,7 @@ import java.rmi.server.UnicastRemoteObject;
  *
  * Sep 29, 2017
  */
-public class ConversionService extends UnicastRemoteObject implements InterfaceRemote {
+public class ConversionService extends UnicastRemoteObject implements RemoteInterface {
 
 	private static final long serialVersionUID = 1L;
 	

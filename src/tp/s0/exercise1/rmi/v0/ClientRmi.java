@@ -20,7 +20,7 @@ public class ClientRmi {
 	public static void main(String[] args) {
 		try {
 			// Creates then uses InterfaceRemote
-			InterfaceRemote interfaceRemote = (InterfaceRemote) 
+			RemoteInterface interfaceRemote = (RemoteInterface) 
 					Naming.lookup("rmi://localhost:6666/Conversion");
 			
 			int euros = 1664;

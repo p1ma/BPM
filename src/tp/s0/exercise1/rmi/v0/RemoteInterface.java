@@ -11,6 +11,6 @@ import java.rmi.RemoteException;
  *
  * Sep 29, 2017
  */
-public interface InterfaceRemote extends Remote {
+public interface RemoteInterface extends Remote {
 	public double convert(double val) throws RemoteException;
 }

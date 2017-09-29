@@ -1,7 +1,7 @@
 /**
  * 
  */
-package cm.s1.rmi;
+package cm.s0.rmi;
 
 import java.net.MalformedURLException;
 import java.rmi.Naming;

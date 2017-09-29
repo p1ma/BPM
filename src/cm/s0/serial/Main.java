@@ -1,7 +1,7 @@
 /**
  * 
  */
-package cm.s1.serial;
+package cm.s0.serial;
 
 import java.io.File;
 import java.io.IOException;

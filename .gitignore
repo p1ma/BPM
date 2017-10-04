@@ -29,3 +29,11 @@ bin/*
 /nbproject/private/
 /build/
 files/*
+
+# Netbeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/

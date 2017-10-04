@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://www.fst.univ-lorraine.fr" xmlns:tns="http://www.fst.univ-lorraine.fr" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="conversion" type="tns:conversion"/>
+
+  <xs:element name="conversionResponse" type="tns:conversionResponse"/>
+
+  <xs:complexType name="conversion">
+    <xs:sequence>
+      <xs:element name="amount" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="conversionResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

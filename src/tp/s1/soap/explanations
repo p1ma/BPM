@@ -1,0 +1,12 @@
+/**
+ *
+ * @author Pierre-Marie JUNGES - Master SSSR at University of Lorraine
+ * 
+ * Oct 4, 2017
+ */
+
+SoapUI -> new SOAP Project
+Project Name: Client
+Initial WSDL: http://localhost:8080/?wsdl (@see Publication.java)
+
+@Before pressing OK -> launch server (a.k.a execute Publication.java)

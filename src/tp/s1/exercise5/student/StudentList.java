@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tp.s1.exercise5;
+package tp.s1.exercise5.student;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +26,7 @@ import javax.jws.WebService;
  * tp/s1/exercise5/jaxws/RemoveResponse.java
 
  */
-@WebService(name="StudentManagement", targetNamespace="http://www.fst.univ-lorraine.fr")
+@WebService(name="StudentList", targetNamespace="http://www.test.fr")
 public class StudentList {
 
     private List<Student> students;
@@ -37,7 +37,7 @@ public class StudentList {
     
     @WebMethod(operationName="add", action="add")
     public void add(@WebParam(name="studentA")Student student) {
-        
+        students.add(student);
     }
     
     @WebMethod(operationName="removeS", action="removeS")

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://www.test.fr" xmlns:tns="http://www.test.fr" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="add" type="tns:add"/>
+
+  <xs:element name="addResponse" type="tns:addResponse"/>
+
+  <xs:element name="getInfo" type="tns:getInfo"/>
+
+  <xs:element name="getInfoResponse" type="tns:getInfoResponse"/>
+
+  <xs:element name="getList" type="tns:getList"/>
+
+  <xs:element name="getListResponse" type="tns:getListResponse"/>
+
+  <xs:element name="removeI" type="tns:removeI"/>
+
+  <xs:element name="removeIResponse" type="tns:removeIResponse"/>
+
+  <xs:element name="removeS" type="tns:removeS"/>
+
+  <xs:element name="removeSResponse" type="tns:removeSResponse"/>
+
+  <xs:complexType name="add">
+    <xs:sequence>
+      <xs:element name="studentA" type="tns:student" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="student">
+    <xs:sequence>
+      <xs:element name="age" type="xs:int"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getList">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getListResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getInfo">
+    <xs:sequence>
+      <xs:element name="studentG" type="tns:student" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getInfoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="removeI">
+    <xs:sequence>
+      <xs:element name="indice" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="removeIResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="removeS">
+    <xs:sequence>
+      <xs:element name="studentR" type="tns:student" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="removeSResponse">
+    <xs:sequence/>
+  </xs:complexType>
+</xs:schema>
+
